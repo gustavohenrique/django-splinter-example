@@ -1,0 +1,61 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>django-poll-example</title>
+
+    <link rel="stylesheet" href="{% static 'styles/vendor.css'%}">
+    <link rel="stylesheet" href="{% static 'styles/main.css' %}">
+
+</head>
+<body class="header">
+
+    <div class="ui fixed transparent inverted main menu">
+        <div class="container">
+            <div class="title item"><h1>django-poll-example</h1></div>
+        </div>
+    </div>
+
+    <div id="content" class="ui center middle aligned column grid">
+        <div class="row">
+            <div class="six wide column">
+                <div class="ui pointing below large purple label"><h2 class="score">{{ p1.score }}%</h2></div>
+            </div>
+            <div class="three wide column">&nbsp;</div>
+            <div class="six wide column">
+                <div class="ui pointing below large purple label"><h2 class="score">{{ p2.score }}%</h2></div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="six wide column">
+                <img width="300" height="300" class="circular ui medium image right floated" src="{% static 'images/dog3.jpg' %}">
+            </div>
+            <div class="four wide column">
+                <img width="150" height="150" src="{% static 'images/vs.png' %}" alt="vs"/>
+            </div>
+            <div class="six wide column">
+                <img width="300" height="300" class="circular ui medium image left " src="{% static 'images/dog4.jpg' %}">
+            </div>
+        </div>
+        <div class="row">
+            <div class="six wide column">
+                <a href="{% url 'poll.views.vote' p1.id %}" class="circular ui massive blue button">
+                    <i class="like icon"></i>Vote for Pug
+                </a>
+            </div>
+            <div class="three wide column">&nbsp;</div>
+            <div class="six wide column">
+                <a href="{% url 'poll.views.vote' p2.id %}" class="circular ui massive blue button">
+                    <i class="like icon"></i>Vote for Labrador
+                </a>
+            </div>
+        </div>
+        <div class="row">&nbsp;</div>
+    </div>
+
+</body>
+</html>
