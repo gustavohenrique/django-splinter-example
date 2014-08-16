@@ -1,18 +1,18 @@
-django-poll-example
+django-splinter-example
 ===================
 
 
-# About
+## About
 
 This app uses:
 
 * Django
 * Splinter
 
-# Setup
+## Setup
 
     pip install -r requirements.txt
 
-# License
+## License
 
 MIT
